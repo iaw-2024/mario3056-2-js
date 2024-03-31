@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const tableBody = document.getElementById('table-body');
 
     // Fetch JSON data
-    fetch("http://localhost:3001/express")
+    fetch("/express")
         .then(response => response.json())
         .then(data => {
             // Clear existing table rows
