@@ -4,16 +4,16 @@ const fs = require("fs").promises;
 const path = require('path');
 const dataFilePath = path.join(__dirname, '../data/data.json');
 
-app.get('/express', async (req, res) => {
-    try {
-      const data = await fs.readFile(dataFilePath, 'utf8');
-      const jsonData = JSON.parse(data);
-      res.json(jsonData);
-    } catch (error) {
-      console.error('Error reading JSON file:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
-    }
-  });
+app.get("/express", async (req, res) => {
+  try {
+    const data = await fs.readFile(dataFilePath, "utf8");
+    const jsonData = JSON.parse(data);
+    res.json(jsonData);
+  } catch (error) {
+    console.error("Error reading JSON file:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
   
 app.use(express.static("public"));
 
