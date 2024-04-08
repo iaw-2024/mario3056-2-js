@@ -4,7 +4,9 @@ const fs = require("fs").promises;
 const path = require('path');
 const dataFilePath = path.join(__dirname, '../data/data.json');
 
-app.get("/express", async (req, res) => {
+app.get("/express", (req, res) => res.send("Express on Vercel!"));
+
+app.get("/data", async (req, res) => {
   try {
     const data = await fs.readFile(dataFilePath, "utf8");
     const jsonData = JSON.parse(data);

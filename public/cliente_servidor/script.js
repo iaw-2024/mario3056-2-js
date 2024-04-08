@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const tableBody = document.getElementById('table-body');
 
-    fetch("/express")
+    fetch("/data")
         .then(response => response.json())
         .then(data => {
             tableBody.innerHTML = '';
